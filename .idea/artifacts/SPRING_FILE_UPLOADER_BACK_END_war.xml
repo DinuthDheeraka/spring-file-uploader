@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="SPRING-FILE-UPLOADER-BACK-END:war">
+    <output-path>$PROJECT_DIR$/SPRING-FILE-UPLOADER-BACK-END/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>SPRING-FILE-UPLOADER-BACK-END</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="SPRING-FILE-UPLOADER-BACK-END-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="SPRING-FILE-UPLOADER-BACK-END:war exploded" />
+    </root>
+  </artifact>
+</component>
