@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/SPRING-FILE-UPLOADER-BACK-END/SPRING-FILE-UPLOADER-BACK-END.iml" filepath="$PROJECT_DIR$/SPRING-FILE-UPLOADER-BACK-END/SPRING-FILE-UPLOADER-BACK-END.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SPRING-FILE-UPLOADER-FRONT-END/SPRING-FILE-UPLOADER-FRONT-END.iml" filepath="$PROJECT_DIR$/SPRING-FILE-UPLOADER-FRONT-END/SPRING-FILE-UPLOADER-FRONT-END.iml" />
+    </modules>
+  </component>
+</project>
