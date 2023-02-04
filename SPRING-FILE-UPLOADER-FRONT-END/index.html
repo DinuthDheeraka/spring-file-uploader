@@ -3,17 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style>
+        img{
+            width: 400px;
+            height: 400px;
+            border: 1px solid blueviolet;
+        }
+    </style>
 </head>
 <body>
 <input type="file" id="imageFile">
+<img id="img" src='http://localhost:8080/SPRING_FILE_UPLOADER_BACK_END_war_exploded/upload/get'>
 <button id="uploadImage">Upload Image</button>
+<button id="getImage">Get Image</button>
 <script src="assets/js/jquery-3.6.1.min.js"></script>
 <script>
     var baseUrl = 'http://localhost:8080/SPRING_FILE_UPLOADER_BACK_END_war_exploded/';
+    $("#imageFile").change(function () {
+        let reader = new FileReader();
+
+        reader.onload = function (e) {
+            $("#img").attr('src', e.target.result);
+        };
+
+        reader.readAsDataURL(this.files[0]);
+    });
+
+    //--------------------------------------------
+
+    $('#getImage').click(function () {
+        $.ajax({
+            url: baseUrl+'/upload/get',
+            type: 'GET',
+            async:false,
+            success: function (data) {
+                console.log(data);
+            },
+            error: function (error) {
+                console.error(error);
+            }
+        });
+    });
+
+    //--------------------------------------------
+
     $("#uploadImage").click(function () {
         let imageFile = $("#imageFile").prop('files')[0];
         let formData = new FormData();
         formData.append("image", imageFile);
+
 
         $.ajax({
             url: baseUrl+'/upload/post',
