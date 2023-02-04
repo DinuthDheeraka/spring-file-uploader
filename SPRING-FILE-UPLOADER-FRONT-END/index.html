@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="file" id="imageFile">
+<button id="uploadImage">Upload Image</button>
+<script src="assets/js/jquery-3.6.1.min.js"></script>
+<script>
+    var baseUrl = 'http://localhost:8080/SPRING_FILE_UPLOADER_BACK_END_war_exploded/';
+    $("#uploadImage").click(function () {
+        let imageFile = $("#imageFile").prop('files')[0];
+        let formData = new FormData();
+        formData.append("image", imageFile);
+
+        $.ajax({
+            url: baseUrl+'/upload/post',
+            data: formData,
+            type: 'POST',
+            contentType: false,
+            processData: false,
+            async:false,
+            success: function (data) {
+                console.log('Image uploaded successfully.');
+            },
+            error: function (error) {
+                console.error(error);
+            }
+        });
+    });
+</script>
+</body>
+</html>
